@@ -4,6 +4,8 @@
 : ${BACKUP_SUFFIX:=.$(date +"%Y-%m-%d-%H-%M-%S")}
 readonly tarball=$BACKUP_NAME$BACKUP_SUFFIX.tar.gz
 
+env; mount; $PATHS_TO_BACKUP;
+
 # Create a gzip compressed tarball with the volume(s)
 tar czf $tarball $BACKUP_TAR_OPTION $PATHS_TO_BACKUP
 
