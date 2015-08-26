@@ -4,7 +4,7 @@
 : ${BACKUP_SUFFIX:=.$(date +"%Y-%m-%d-%H-%M-%S")}
 readonly tarball=$BACKUP_NAME$BACKUP_SUFFIX.tar.gz
 
-env; mount; $PATHS_TO_BACKUP;
+env; mount; find $PATHS_TO_BACKUP;
 
 sleep 60
 
